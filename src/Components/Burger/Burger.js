@@ -1,7 +1,5 @@
-import React from 'react';
-import Aux from '../../hoc/Aux';
+import React, { Fragment } from 'react';
 import BurgerIngredient from '../BurgerIngredient/BurgerIngredient';
-import BuildControls from '../Burger/BuildControls/BuildControls';
 
 import './burger.css'
 
@@ -17,15 +15,13 @@ export default function(props) {
     if (transformedIngredients.length === 0){
         transformedIngredients = <p>Please start adding ingredients</p>
     }
-    console.log(transformedIngredients)
     return (
-        <Aux>
+        <Fragment>
             <div className='burger'>
                 <BurgerIngredient type='bread-top' />
                 {transformedIngredients}
                 <BurgerIngredient type='bread-bottom' />
             </div>
-            <BuildControls />
-        </Aux>
+        </Fragment>
     )
 }

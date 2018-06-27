@@ -11,9 +11,18 @@ const controls = [
 ]
 
 export default function(props) {
+    console.log(props);
     return (
         <div className="build-controls">
-            {controls.map(obj => <BuildControl label={obj.label} key={obj.type} />)}
+            {controls.map(obj => 
+                <BuildControl 
+                    label={obj.label} 
+                    key={obj.type}
+                    disabled={props.disabledInfo[obj.type]}
+                    addIngredient={() => props.addIngredient(obj.type)}
+                    removeIngredient={() => props.removeIngredient(obj.type)}
+                />
+            )}
         </div>
     )
 }

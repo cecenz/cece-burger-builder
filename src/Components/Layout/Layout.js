@@ -1,13 +1,12 @@
-import React from 'react';
-import Aux from '../../hoc/Aux'
+import React, { Fragment } from 'react';
 
 export default function( props ) {
     return(
-        <Aux>
+        <Fragment>
             <div>Toolbar, Sidebar, Backdrop</div>
             <main>
                 {props.children}
             </main>
-        </Aux>
+        </Fragment>
     )
 }
